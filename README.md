@@ -160,7 +160,7 @@ BCA Student | MERN Stack Developer
 
 GitHub: https://github.com/Raghav335
 
-LinkedIn: YOUR_LINKEDIN_PROFILE
+LinkedIn: https://www.linkedin.com/in/raghav-gupta-8a9152328?utm_source=share_via&utm_content=profile&utm_medium=member_android
 
 ---
 
