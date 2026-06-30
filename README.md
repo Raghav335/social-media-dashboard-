@@ -14,7 +14,7 @@ A full-stack **Social Media Dashboard** built using the **MERN Stack**. Users ca
 # 🌐 Live Demo
 
 ### 🚀 Frontend
-https://YOUR-VERCEL-LINK.vercel.app
+https://social-media-dashboard-ten-mauve.vercel.app/
 
 ### ⚙ Backend API
 https://YOUR-RENDER-LINK.onrender.com
