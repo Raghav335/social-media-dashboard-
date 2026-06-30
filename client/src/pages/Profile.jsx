@@ -1,0 +1,83 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+
+function Profile() {
+
+    const [totalPosts, setTotalPosts] = useState(0);
+
+useEffect(() => {
+  fetchPosts();
+}, []);
+
+const fetchPosts = async () => {
+  try {
+    const res = await axios.get("http://localhost:5000/api/posts");
+    setTotalPosts(res.data.length);
+  } catch (err) {
+    console.log(err);
+  }
+};
+  return (
+    <div style={{ padding: "30px" }}>
+      <h2>My Profile</h2>
+
+      <div
+        style={{
+          width: "400px",
+          padding: "20px",
+          background: "#fff",
+          borderRadius: "10px",
+          boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+        }}
+      >
+        <h3>👤 {user?.name}</h3>
+
+        <p><strong>Email:</strong> {user?.email}</p>
+
+        <p><strong>Total Posts:</strong> {totalPosts}</p>
+
+        <button
+  onClick={async () => {
+    const newName = prompt("Enter New Name", user.name);
+
+    if (!newName) return;
+
+    try {
+      const res = await axios.put(
+        `http://localhost:5000/api/users/update/${user._id}`,
+        {
+          name: newName,
+        }
+      );
+
+      localStorage.setItem("user", JSON.stringify(res.data));
+
+      alert("Profile Updated Successfully");
+
+      window.location.reload();
+
+    } catch (err) {
+      console.log(err);
+      alert("Error Updating Profile");
+    }
+  }}
+  style={{
+    padding: "10px 20px",
+    background: "#2563eb",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  }}
+>
+  Edit Profile
+</button>
+      </div>
+    </div>
+  );
+}
+
+export default Profile;

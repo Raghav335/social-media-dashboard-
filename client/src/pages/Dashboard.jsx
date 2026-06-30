@@ -1,0 +1,229 @@
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+import Navbar from "../components/Navbar";
+
+function Dashboard() {
+
+  const [totalPosts, setTotalPosts] = useState(0);
+const [totalLikes, setTotalLikes] = useState(0);
+
+useEffect(() => {
+  fetchDashboardData();
+}, []);
+
+const fetchDashboardData = async () => {
+  try {
+    const res = await axios.get("http://localhost:5000/api/posts");
+
+    setTotalPosts(res.data.length);
+
+    const likes = res.data.reduce(
+      (sum, post) => sum + post.likes,
+      0
+    );
+
+    setTotalLikes(likes);
+  } catch (err) {
+    console.log(err);
+  }
+};
+  return (
+    <div style={{ display: "flex", height: "100vh" }}>
+      {/* Sidebar */}
+      <div
+        style={{
+          width: "250px",
+          background: "#0f172a",
+          color: "white",
+          padding: "30px 20px",
+        }}
+      >
+        <h2
+  style={{
+    color: "white",
+    textAlign: "center",
+    marginBottom: "20px",
+    fontSize: "28px",
+    fontWeight: "bold",
+  }}
+>
+  📊 Dashboard
+</h2>
+
+        <hr />
+
+        <Link
+  to="/dashboard"
+  style={{ color: "white", textDecoration: "none" }}
+>
+  <p
+  style={{
+    padding: "12px",
+    borderRadius: "8px",
+    marginBottom: "10px",
+    background: "#1e293b",
+  }}
+>
+  🏠 Home
+</p>
+</Link>
+
+        <Link
+  to="/create-post"
+  style={{ color: "white", textDecoration: "none" }}
+>
+  <p>➕ Create Post</p>
+</Link>
+        <Link
+  to="/all-posts"
+  style={{ color: "white", textDecoration: "none" }}
+>
+  <p>📰 All Posts</p>
+</Link>
+        <Link
+  to="/profile"
+  style={{ color: "white", textDecoration: "none" }}
+>
+  <p>👤 Profile</p>
+</Link>
+        <p
+  onClick={() => {
+    if (window.confirm("Are you sure you want to logout?")) {
+  localStorage.clear();
+  window.location.href = "/";
+}
+  }}
+  style={{ cursor: "pointer" }}
+>
+  🚪 Logout
+</p>
+      </div>
+
+      {/* Main Content */}
+      <div
+        style={{
+          flex: 1,
+          background: "#eef2ff",
+          padding: "40px",
+        }}
+      >
+        <Navbar />
+
+        <div style={{ paddingTop: "60px" }}>
+          <h1
+            style={{
+              margin: 0,
+              fontSize: "42px",
+fontWeight: "bold",
+color: "#1e293b",
+            }}
+          >
+            Welcome to Social Media Dashboard
+          </h1>
+
+          <p
+            style={{
+              marginTop: "20px",
+              fontSize: "18px",
+color: "#475569",
+            }}
+          >
+            Here you can create posts, view posts and manage your profile.
+          </p>
+
+          <div
+  style={{
+    display: "flex",
+    gap: "25px",
+    marginTop: "40px",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+  }}
+>
+  <div
+    style={{
+      background: "#2563eb",
+      color: "white",
+      padding: "25px",
+      borderRadius: "15px",
+      width: "230px",
+      textAlign: "center",
+      boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+    }}
+  >
+    <h3 style={{ marginBottom: "10px", fontSize: "20px" }}>
+      📝 Total Posts
+    </h3>
+
+    <h2
+      style={{
+        fontSize: "38px",
+        margin: 0,
+        fontWeight: "bold",
+      }}
+    >
+      {totalPosts}
+    </h2>
+  </div>
+
+  <div
+    style={{
+      background: "#16a34a",
+      color: "white",
+      padding: "25px",
+      borderRadius: "15px",
+      width: "230px",
+      textAlign: "center",
+      boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+    }}
+  >
+    <h3 style={{ marginBottom: "10px", fontSize: "20px" }}>
+      ❤️ Total Likes
+    </h3>
+
+    <h2
+      style={{
+        fontSize: "38px",
+        margin: 0,
+        fontWeight: "bold",
+      }}
+    >
+      {totalLikes}
+    </h2>
+  </div>
+
+  <div
+    style={{
+      background: "#ea580c",
+      color: "white",
+      padding: "25px",
+      borderRadius: "15px",
+      width: "230px",
+      textAlign: "center",
+      boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+    }}
+  >
+    <h3 style={{ marginBottom: "10px", fontSize: "20px" }}>
+      👤 Logged In User
+    </h3>
+
+    <h2
+      style={{
+        fontSize: "38px",
+        margin: 0,
+        fontWeight: "bold",
+      }}
+    >
+      1
+    </h2>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Dashboard;
