@@ -126,25 +126,25 @@ VITE_API_URL=YOUR_BACKEND_URL
 ```
 
 ---
-## 📸 Screenshots
+## 📸 Project Screenshots
 
-### Login
-
+### 🔐 Login Page
 ![Login](screenshots/login.png)
 
-### Dashboard
+### 📝 Register Page
+![Register](screenshots/register.png)
 
+### 📊 Dashboard
 ![Dashboard](screenshots/dashboard.png)
 
-### All Posts
+### ➕ Create Post
+![Create Post](screenshots/create-post.png)
 
+### 📰 All Posts
 ![All Posts](screenshots/all-posts.png)
 
-### Profile
-
+### 👤 Profile
 ![Profile](screenshots/profile.png)
-
----
 
 ## 🚀 Future Improvements
 
