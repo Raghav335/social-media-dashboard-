@@ -71,7 +71,7 @@ social-media-dashboard/
 ### Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_LINK
+git clone https://github.com/Raghav335/social-media-dashboard-
 ```
 
 ### Install Dependencies
