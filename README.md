@@ -158,7 +158,7 @@ VITE_API_URL=YOUR_BACKEND_URL
 
 BCA Student | MERN Stack Developer
 
-GitHub: YOUR_GITHUB_PROFILE
+GitHub: https://github.com/Raghav335
 
 LinkedIn: YOUR_LINKEDIN_PROFILE
 
