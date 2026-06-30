@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 import Navbar from "../components/Navbar";
 
@@ -15,7 +16,7 @@ useEffect(() => {
 
 const fetchDashboardData = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/posts");
+    const res = await axios.get(`${API_URL}/api/posts`);
 
     setTotalPosts(res.data.length);
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function AllPosts() {
   const [posts, setPosts] = useState([]);
 
@@ -12,7 +14,7 @@ function AllPosts() {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/posts");
+      const res = await axios.get(`${API_URL}/api/posts`);
       setPosts(res.data);
     } catch (err) {
       console.log(err);
@@ -21,7 +23,7 @@ function AllPosts() {
 
   const likePost = async (id) => {
   try {
-    await axios.put(`http://localhost:5000/api/posts/like/${id}`);
+    await axios.put(`${API_URL}/api/posts/like/${id}`);
 
     fetchPosts();
   } catch (err) {
@@ -33,7 +35,7 @@ function AllPosts() {
 
   const deletePost = async (id) => {
   try {
-    await axios.delete(`http://localhost:5000/api/posts/${id}`);
+    await axios.delete(`${API_URL}/api/posts/${id}`);
 
     alert("Post Deleted Successfully");
 

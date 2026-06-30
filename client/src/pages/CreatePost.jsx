@@ -4,6 +4,7 @@
 import { useState } from "react";
 
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function CreatePost() {
   const [post, setPost] = useState({
@@ -15,7 +16,10 @@ function CreatePost() {
   e.preventDefault();
 
   try {
-    await axios.post("http://localhost:5000/api/posts", {
+    await axios.post(`${API_URL}/api/posts`, {
+
+
+
       username: "Raghav Gupta",
       caption: post.content,
       image: "",

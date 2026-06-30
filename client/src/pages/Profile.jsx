@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const user = JSON.parse(localStorage.getItem("user"));
 
 
@@ -14,7 +16,7 @@ useEffect(() => {
 
 const fetchPosts = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/posts");
+    const res = await axios.get(`${API_URL}/api/posts`);
     setTotalPosts(res.data.length);
   } catch (err) {
     console.log(err);
@@ -46,8 +48,8 @@ const fetchPosts = async () => {
     if (!newName) return;
 
     try {
-      const res = await axios.put(
-        `http://localhost:5000/api/users/update/${user._id}`,
+      await axios.put(
+  `${API_URL}/api/users/update/${user._id}`,
         {
           name: newName,
         }

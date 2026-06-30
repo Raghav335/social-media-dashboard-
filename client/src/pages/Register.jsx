@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Register() {
   const [user, setUser] = useState({
@@ -20,9 +21,9 @@ function Register() {
 
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/users/register",
-      user
-    );
+  `${API_URL}/api/users/register`,
+  user
+);
 
     alert(res.data.message);
 
