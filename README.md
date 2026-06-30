@@ -129,22 +129,38 @@ VITE_API_URL=YOUR_BACKEND_URL
 ## 📸 Project Screenshots
 
 ### 🔐 Login Page
-![Login](screenshots/login.png)
+
+![Login](./screenshots/login.png)
+
+---
 
 ### 📝 Register Page
-![Register](screenshots/register.png)
+
+![Register](./screenshots/register.png)
+
+---
 
 ### 📊 Dashboard
-![Dashboard](screenshots/dashboard.png)
+
+![Dashboard](./screenshots/dashboard.png)
+
+---
 
 ### ➕ Create Post
-![Create Post](screenshots/create-post.png)
+
+![Create Post](./screenshots/create%20post.png)
+
+---
 
 ### 📰 All Posts
-![All Posts](screenshots/all-posts.png)
+
+![All Posts](./screenshots/all%20posts.png)
+
+---
 
 ### 👤 Profile
-![Profile](screenshots/profile.png)
+
+![Profile](./screenshots/profile.png)
 
 ## 🚀 Future Improvements
 
