@@ -20,7 +20,7 @@ https://social-media-dashboard-ten-mauve.vercel.app/
 
 https://social-media-dashboard-backend-0pj7.onrender.com
 
-> Replace the above links with your deployed URLs.
+
 
 ---
 
