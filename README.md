@@ -1,191 +1,209 @@
 # 🚀 Social Media Dashboard (MERN Stack)
 
-A full-stack Social Media Dashboard built using the MERN Stack. Users can register, log in, create posts, like posts, edit and delete their own posts, and manage their profile. The project is fully deployed with a React frontend and an Express + MongoDB backend.
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen?logo=mongodb)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?logo=vercel)
+![Render](https://img.shields.io/badge/Backend-Render-46E3B7?logo=render)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
+A full-stack **Social Media Dashboard** built using the **MERN Stack**. Users can register, log in, create posts, like posts, edit and delete posts, search posts, and manage their profiles. The application is fully deployed using **Vercel** and **Render**.
 
 ---
 
-## 📌 Features
+# 🌐 Live Demo
 
-- 🔐 User Registration & Login
+### 🚀 Frontend
+https://YOUR-VERCEL-LINK.vercel.app
+
+### ⚙ Backend API
+https://YOUR-RENDER-LINK.onrender.com
+
+> Replace the above links with your deployed URLs.
+
+---
+
+# ✨ Features
+
+- 🔐 User Registration
+- 🔑 User Login
 - 👤 User Profile
-- ✏️ Edit Profile
+- ✏ Edit Profile
 - 📝 Create New Post
 - 📖 View All Posts
 - 🔍 Search Posts
 - ❤️ Like Posts
-- ✏️ Edit Posts
+- ✏ Edit Posts
 - 🗑 Delete Posts
-- 📊 Dashboard with Statistics
+- 📊 Dashboard Statistics
 - 🚪 Logout
-- ☁️ MongoDB Atlas Integration
-- 🌐 Fully Deployed Application
+- ☁ MongoDB Atlas Database
+- 🌍 Fully Responsive UI
+- 🚀 Fully Deployed Application
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
-### Frontend
-- React.js (Vite)
-- React Router DOM
-- Axios
-- CSS
-
-### Backend
-- Node.js
-- Express.js
-
-### Database
-- MongoDB Atlas
-- Mongoose
-
-### Deployment
-- Frontend: Vercel
-- Backend: Render
+| Category | Technology |
+|-----------|------------|
+| Frontend | React.js (Vite), React Router DOM, Axios |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas, Mongoose |
+| Deployment | Vercel, Render |
+| Version Control | Git & GitHub |
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 social-media-dashboard/
 │
 ├── client/
-│   ├── src/
 │   ├── public/
-│   └── package.json
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.js
 │
 ├── server/
-│   ├── routes/
-│   ├── models/
 │   ├── config/
+│   ├── models/
+│   ├── routes/
 │   ├── app.js
 │   └── package.json
+│
+├── screenshots/
 │
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙ Installation
 
-### Clone Repository
-
-```bash
-git clone https://github.com/Raghav335/social-media-dashboard-
-```
-
-### Install Dependencies
-
-### Backend
+## Clone Repository
 
 ```bash
-cd server
-npm install
-```
-
-### Frontend
-
-```bash
-cd client
-npm install
+git clone https://github.com/Raghav335/social-media-dashboard-.git
 ```
 
 ---
 
-## ▶️ Run Backend
+## Backend Setup
 
 ```bash
 cd server
+npm install
 npm start
 ```
 
 ---
 
-## ▶️ Run Frontend
+## Frontend Setup
 
 ```bash
 cd client
+npm install
 npm run dev
 ```
 
 ---
 
-## 🌍 Environment Variables
+# 🌍 Environment Variables
 
-### Backend (.env)
+## Backend (.env)
 
 ```env
 MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
 PORT=5000
 ```
 
-### Frontend (.env)
+## Frontend (.env)
 
 ```env
-VITE_API_URL=YOUR_BACKEND_URL
+VITE_API_URL=YOUR_RENDER_BACKEND_URL
 ```
 
 ---
-## 📸 Project Screenshots
 
-### 🔐 Login Page
+# 📸 Project Screenshots
+
+## 🔐 Login Page
 
 ![Login](./screenshots/login.png)
 
 ---
 
-### 📝 Register Page
+## 📝 Register Page
 
 ![Register](./screenshots/register.png)
 
 ---
 
-### 📊 Dashboard
+## 📊 Dashboard
 
 ![Dashboard](./screenshots/dashboard.png)
 
 ---
 
-### ➕ Create Post
+## ➕ Create Post
 
 ![Create Post](./screenshots/create%20post.png)
 
 ---
 
-### 📰 All Posts
+## 📰 All Posts
 
 ![All Posts](./screenshots/all%20posts.png)
 
 ---
 
-### 👤 Profile
+## 👤 Profile
 
 ![Profile](./screenshots/profile.png)
 
-## 🚀 Future Improvements
+---
+
+# 🚀 Future Improvements
 
 - JWT Authentication
-- Upload Profile Image
-- Upload Post Images
+- Profile Picture Upload
+- Post Image Upload
 - Comments System
-- Real-time Notifications
+- Real-Time Notifications
 - Dark Mode
-- Friend System
+- Friend Request System
+- User Roles & Permissions
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-**Raghav Gupta**
+## Raghav Gupta
 
-BCA Student | Full Stack Developer
+🎓 BCA Student
 
-GitHub: https://github.com/Raghav335
+💻 MERN Stack & Full Stack Developer
 
-LinkedIn: https://www.linkedin.com/in/raghav-gupta-8a9152328?utm_source=share_via&utm_content=profile&utm_medium=member_android
+### GitHub
+
+https://github.com/Raghav335
+
+### LinkedIn
+
+https://www.linkedin.com/in/raghav-gupta-8a9152328
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
-If you like this project, don't forget to ⭐ star the repository.
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+---
+
+## 🙌 Thank You
+
+Thank you for visiting this repository.
+
+If you like this project, don't forget to ⭐ Star the repository and share your feedback.
