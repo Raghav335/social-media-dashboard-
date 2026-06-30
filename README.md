@@ -178,7 +178,7 @@ VITE_API_URL=YOUR_BACKEND_URL
 
 **Raghav Gupta**
 
-BCA Student | MERN Stack Developer
+BCA Student | Full Stack Developer
 
 GitHub: https://github.com/Raghav335
 
