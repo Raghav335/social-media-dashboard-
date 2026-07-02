@@ -5,6 +5,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 import Navbar from "../components/Navbar";
 
+
+
 function Dashboard() {
 
   const [totalPosts, setTotalPosts] = useState(0);
@@ -89,14 +91,24 @@ const fetchDashboardData = async () => {
 >
   <p>👤 Profile</p>
 </Link>
-        <p
+       <Link
+  to="/analytics"
+  style={{ color: "white", textDecoration: "none" }}
+>
+  <p>📊 Analytics</p>
+</Link>
+
+<p
   onClick={() => {
     if (window.confirm("Are you sure you want to logout?")) {
-  localStorage.clear();
-  window.location.href = "/";
-}
+      localStorage.clear();
+      window.location.href = "/";
+    }
   }}
-  style={{ cursor: "pointer" }}
+  style={{
+    cursor: "pointer",
+    color: "white",
+  }}
 >
   🚪 Logout
 </p>
@@ -221,6 +233,90 @@ color: "#475569",
     </h2>
   </div>
 </div>
+
+<div
+  style={{
+    marginTop: "30px",
+    background: "#ffffff",
+    padding: "25px",
+    borderRadius: "15px",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+  }}
+>
+  <h2 style={{ marginBottom: "20px", color: "#1e293b" }}>
+    🚀 Quick Actions
+  </h2>
+
+  <div
+    style={{
+      display: "flex",
+      gap: "15px",
+      flexWrap: "wrap",
+    }}
+  >
+    <Link to="/create-post">
+      <button
+        style={{
+          padding: "12px 20px",
+          background: "#2563eb",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+        }}
+      >
+        ➕ Create Post
+      </button>
+    </Link>
+
+    <Link to="/all-posts">
+      <button
+        style={{
+          padding: "12px 20px",
+          background: "#16a34a",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+        }}
+      >
+        📰 All Posts
+      </button>
+    </Link>
+
+    <Link to="/analytics">
+      <button
+        style={{
+          padding: "12px 20px",
+          background: "#ea580c",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+        }}
+      >
+        📊 Analytics
+      </button>
+    </Link>
+
+    <Link to="/profile">
+      <button
+        style={{
+          padding: "12px 20px",
+          background: "#7c3aed",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+        }}
+      >
+        👤 Profile
+      </button>
+    </Link>
+  </div>
+</div>
+
+
         </div>
       </div>
     </div>

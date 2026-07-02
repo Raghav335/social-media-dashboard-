@@ -6,6 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import CreatePost from "./pages/CreatePost";
 import AllPosts from "./pages/AllPosts";
 import Profile from "./pages/Profile";
+
+import Analytics from "./pages/Analytics";
 import NotFound from "./pages/NotFound";
 
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -52,6 +54,15 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+  path="/analytics"
+  element={
+    <ProtectedRoute>
+      <Analytics />
+    </ProtectedRoute>
+  }
+/>
 
         <Route path="*" element={<NotFound />} />
       </Routes>
