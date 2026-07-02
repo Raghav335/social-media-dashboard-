@@ -255,7 +255,7 @@ MERN& Full Stack Developer
 
 https://github.com/Raghav335
 
-##linkdin 
+##  linkedin 
 
 https://www.linkedin.com/in/raghav-gupta-8a9152328?utm_source=share_via&utm_content=profile&utm_medium=member_android
 
