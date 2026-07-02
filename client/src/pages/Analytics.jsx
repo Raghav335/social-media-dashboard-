@@ -1,4 +1,8 @@
+
+import { Link } from "react-router-dom";
+
 import { useEffect, useState } from "react";
+
 import axios from "axios";
 import AnalyticsChart from "../components/AnalyticsChart";
 import Navbar from "../components/Navbar";
@@ -40,31 +44,43 @@ function Analytics() {
     >
       <Navbar />
 
-      <div style={{ paddingTop: "60px" }}>
+      <div
+  style={{
+    paddingTop: "60px",
+    textAlign: "center",
+  }}
+>
         <h1
-          style={{
-            color: "#1e293b",
-            marginBottom: "10px",
-          }}
-        >
+  style={{
+    color: "#1e293b",
+    fontSize: "56px",
+    fontWeight: "bold",
+    marginBottom: "15px",
+    lineHeight: "1.2",
+  }}
+>
           📊 Analytics Dashboard
         </h1>
 
         <p
-          style={{
-            color: "#64748b",
-            marginBottom: "30px",
-          }}
-        >
-          View analytics of your social media dashboard.
-        </p>
+  style={{
+    color: "#64748b",
+    fontSize: "18px",
+    marginTop: "0",
+    marginBottom: "40px",
+  }}
+>
+  Monitor posts, likes and overall engagement through interactive analytics.
+</p>
 
         <div
           style={{
             display: "flex",
             gap: "20px",
             flexWrap: "wrap",
+            justifyContent: "center",
             marginBottom: "30px",
+
           }}
         >
           <div
@@ -119,6 +135,30 @@ function Analytics() {
   <p>📈 Average Likes Per Post: {totalPosts ? (totalLikes / totalPosts).toFixed(1) : 0}</p>
 
   <p>🚀 Dashboard Status: Active</p>
+</div>
+
+<div
+  style={{
+    textAlign: "center",
+    marginTop: "30px",
+  }}
+>
+  <Link to="/dashboard">
+    <button
+      style={{
+        background: "#2563eb",
+        color: "#fff",
+        border: "none",
+        padding: "12px 25px",
+        borderRadius: "8px",
+        cursor: "pointer",
+        fontSize: "16px",
+        fontWeight: "bold",
+      }}
+    >
+      🏠 Back to Dashboard
+    </button>
+  </Link>
 </div>
       </div>
     </div>

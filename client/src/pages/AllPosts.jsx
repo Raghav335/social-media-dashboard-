@@ -57,8 +57,22 @@ function AllPosts() {
   };
 
   return (
-    <div style={{ padding: "30px" }}>
-      <h2>All Posts</h2>
+    <div
+  style={{
+    padding: "30px",
+    background: "#eef2ff",
+    minHeight: "100vh",
+  }}
+>
+      <h2
+  style={{
+    color: "#1e293b",
+    fontSize: "34px",
+    marginBottom: "20px",
+  }}
+>
+  📰 All Posts
+</h2>
 
       <input
         type="text"
@@ -71,6 +85,8 @@ function AllPosts() {
           margin: "20px 0",
           borderRadius: "5px",
           border: "1px solid #ccc",
+boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+fontSize: "16px",
         }}
       />
 
@@ -90,9 +106,19 @@ function AllPosts() {
                 marginBottom: "15px",
                 borderRadius: "8px",
                 background: "#fff",
+                boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+transition: "0.3s",
+cursor: "pointer",
               }}
             >
-              <h3>{post.username}</h3>
+              <h3
+  style={{
+    color: "#1e293b",
+    marginBottom: "10px",
+  }}
+>
+  👤 {post.username}
+</h3>
 
               <p>{post.caption}</p>
 
@@ -111,6 +137,10 @@ function AllPosts() {
                   border: "none",
                   cursor: "pointer",
                   borderRadius: "5px",
+
+                  width: "120px",
+fontWeight: "bold",
+transition: "0.3s",
                 }}
               >
                 ❤️ Like
@@ -136,6 +166,9 @@ function AllPosts() {
                   border: "none",
                   cursor: "pointer",
                   borderRadius: "5px",
+                  width: "120px",
+fontWeight: "bold",
+transition: "0.3s",
                 }}
               >
                 ✏️ Edit
@@ -151,6 +184,9 @@ function AllPosts() {
                   border: "none",
                   cursor: "pointer",
                   borderRadius: "5px",
+                  width: "120px",
+fontWeight: "bold",
+transition: "0.3s",
                 }}
               >
                 🗑 Delete

@@ -143,7 +143,7 @@ color: "#1e293b",
 color: "#475569",
             }}
           >
-            Here you can create posts, view posts and manage your profile.
+            Manage your posts, track engagement, and analyze your social media performance in one place.
           </p>
 
           <div
@@ -164,6 +164,9 @@ color: "#475569",
       width: "230px",
       textAlign: "center",
       boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+
+      transition: "0.3s",
+cursor: "pointer",
     }}
   >
     <h3 style={{ marginBottom: "10px", fontSize: "20px" }}>
@@ -190,6 +193,9 @@ color: "#475569",
       width: "230px",
       textAlign: "center",
       boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+
+      transition: "0.3s",
+cursor: "pointer",
     }}
   >
     <h3 style={{ marginBottom: "10px", fontSize: "20px" }}>
@@ -216,6 +222,8 @@ color: "#475569",
       width: "230px",
       textAlign: "center",
       boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+      transition: "0.3s",
+cursor: "pointer",
     }}
   >
     <h3 style={{ marginBottom: "10px", fontSize: "20px" }}>
@@ -241,11 +249,23 @@ color: "#475569",
     padding: "25px",
     borderRadius: "15px",
     boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+    transition: "0.3s",
+cursor: "pointer",
   }}
 >
   <h2 style={{ marginBottom: "20px", color: "#1e293b" }}>
     🚀 Quick Actions
   </h2>
+
+  <p
+  style={{
+    color: "#64748b",
+    marginTop: "-10px",
+    marginBottom: "20px",
+  }}
+>
+  Access frequently used features quickly.
+</p> 
 
   <div
     style={{
@@ -258,6 +278,11 @@ color: "#475569",
       <button
         style={{
           padding: "12px 20px",
+
+          width: "170px",
+height: "50px",
+fontWeight: "bold",
+fontSize: "15px",
           background: "#2563eb",
           color: "#fff",
           border: "none",
@@ -273,6 +298,11 @@ color: "#475569",
       <button
         style={{
           padding: "12px 20px",
+
+          width: "170px",
+height: "50px",
+fontWeight: "bold",
+fontSize: "15px",
           background: "#16a34a",
           color: "#fff",
           border: "none",
@@ -288,6 +318,10 @@ color: "#475569",
       <button
         style={{
           padding: "12px 20px",
+          width: "170px",
+height: "50px",
+fontWeight: "bold",
+fontSize: "15px",
           background: "#ea580c",
           color: "#fff",
           border: "none",
@@ -303,6 +337,10 @@ color: "#475569",
       <button
         style={{
           padding: "12px 20px",
+          width: "170px",
+height: "50px",
+fontWeight: "bold",
+fontSize: "15px",
           background: "#7c3aed",
           color: "#fff",
           border: "none",
@@ -315,6 +353,20 @@ color: "#475569",
     </Link>
   </div>
 </div>
+
+<footer
+  style={{
+    textAlign: "center",
+    marginTop: "40px",
+    color: "#64748b",
+    fontSize: "14px",
+    paddingBottom: "20px",
+  }}
+>
+  © 2026 Social Media Dashboard
+  <br />
+  Developed by <strong>Raghav Gupta</strong>
+</footer>
 
 
         </div>

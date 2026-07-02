@@ -46,8 +46,22 @@ function Profile() {
   };
 
   return (
-    <div style={{ padding: "30px" }}>
-      <h2>My Profile</h2>
+    <div
+  style={{
+    padding: "30px",
+    background: "#eef2ff",
+    minHeight: "100vh",
+  }}
+>
+      <h2
+  style={{
+    color: "#1e293b",
+    fontSize: "34px",
+    marginBottom: "25px",
+  }}
+>
+  👤 My Profile
+</h2>
 
       <div
         style={{
@@ -56,9 +70,37 @@ function Profile() {
           background: "#fff",
           borderRadius: "10px",
           boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+          margin: "auto",
+boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
+transition: "0.3s",
         }}
       >
-        <h3>👤 {user?.name}</h3>
+
+        <div
+  style={{
+    width: "80px",
+    height: "80px",
+    borderRadius: "50%",
+    background: "#2563eb",
+    color: "#fff",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: "28px",
+    fontWeight: "bold",
+    margin: "0 auto 20px",
+  }}
+>
+  RG
+</div>
+        <h3
+  style={{
+    textAlign: "center",
+    color: "#1e293b",
+  }}
+>
+  {user?.name}
+</h3>
 
         <p>
           <strong>Email:</strong> {user?.email}
@@ -77,11 +119,25 @@ function Profile() {
             border: "none",
             borderRadius: "5px",
             cursor: "pointer",
+            width: "100%",
+marginTop: "20px",
+fontWeight: "bold",
+fontSize: "16px",
           }}
         >
           Edit Profile
         </button>
       </div>
+
+      <p
+  style={{
+    textAlign: "center",
+    marginTop: "30px",
+    color: "#64748b",
+  }}
+>
+  Social Media Dashboard • Developed by <strong>Raghav Gupta</strong>
+</p>
     </div>
   );
 }
