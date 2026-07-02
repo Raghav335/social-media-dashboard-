@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useTheme } from "../context/ThemeContext";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 function AllPosts() {
+  const { darkMode } = useTheme();
+  const isMobile = window.innerWidth < 768;
+
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -58,21 +62,22 @@ function AllPosts() {
 
   return (
     <div
-  style={{
-    padding: "30px",
-    background: "#eef2ff",
-    minHeight: "100vh",
-  }}
->
+      style={{
+        padding: isMobile ? "20px" : "30px",
+        background: darkMode ? "#0f172a" : "#eef2ff",
+        minHeight: "100vh",
+      }}
+    >
       <h2
-  style={{
-    color: "#1e293b",
-    fontSize: "34px",
-    marginBottom: "20px",
-  }}
->
-  📰 All Posts
-</h2>
+        style={{
+          color: darkMode ? "#ffffff" : "#1e293b",
+          fontSize: isMobile ? "28px" : "34px",
+          marginBottom: "20px",
+          textAlign: "center",
+        }}
+      >
+        📰 All Posts
+      </h2>
 
       <input
         type="text"
@@ -81,116 +86,127 @@ function AllPosts() {
         onChange={(e) => setSearch(e.target.value)}
         style={{
           width: "100%",
-          padding: "10px",
+          padding: "12px",
           margin: "20px 0",
-          borderRadius: "5px",
+          borderRadius: "8px",
           border: "1px solid #ccc",
-boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
-fontSize: "16px",
+          background: darkMode ? "#1e293b" : "#ffffff",
+          color: darkMode ? "#ffffff" : "#000",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+          fontSize: "16px",
         }}
       />
 
       {posts.length === 0 ? (
-        <p>No Posts Found</p>
+        <p
+          style={{
+            color: darkMode ? "#fff" : "#000",
+            textAlign: "center",
+          }}
+        >
+          No Posts Found
+        </p>
       ) : (
         posts
           .filter((post) =>
-            post.caption.toLowerCase().includes(search.toLowerCase())
+            post.caption
+              .toLowerCase()
+              .includes(search.toLowerCase())
           )
           .map((post) => (
             <div
               key={post._id}
               style={{
                 border: "1px solid #ddd",
-                padding: "15px",
-                marginBottom: "15px",
-                borderRadius: "8px",
-                background: "#fff",
-                boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
-transition: "0.3s",
-cursor: "pointer",
+                padding: "20px",
+                marginBottom: "20px",
+                borderRadius: "12px",
+                background: darkMode ? "#1e293b" : "#ffffff",
+                color: darkMode ? "#ffffff" : "#1e293b",
+                boxShadow:
+                  "0 8px 20px rgba(0,0,0,0.08)",
               }}
             >
               <h3
-  style={{
-    color: "#1e293b",
-    marginBottom: "10px",
-  }}
->
-  👤 {post.username}
-</h3>
+                style={{
+                  marginBottom: "10px",
+                }}
+              >
+                👤 {post.username}
+              </h3>
 
               <p>{post.caption}</p>
 
-              <small>❤️ {post.likes} Likes</small>
+              <small>
+                ❤️ {post.likes} Likes
+              </small>
 
               <br />
 
-              <button
-                onClick={() => likePost(post._id)}
+              <div
                 style={{
-                  marginTop: "10px",
-                  marginRight: "10px",
-                  padding: "8px 15px",
-                  background: "#2563eb",
-                  color: "white",
-                  border: "none",
-                  cursor: "pointer",
-                  borderRadius: "5px",
-
-                  width: "120px",
-fontWeight: "bold",
-transition: "0.3s",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "10px",
+                  marginTop: "15px",
                 }}
-              >
-                ❤️ Like
-              </button>
+              ><button
+                  onClick={() => likePost(post._id)}
+                  style={{
+                    background: "#2563eb",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    padding: "10px",
+                    width: isMobile ? "100%" : "120px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  ❤️ Like
+                </button>
 
-              <button
-                onClick={() => {
-                  const newCaption = prompt(
-                    "Edit your post",
-                    post.caption
-                  );
+                <button
+                  onClick={() => {
+                    const newCaption = prompt(
+                      "Edit your post",
+                      post.caption
+                    );
 
-                  if (newCaption) {
-                    updatePost(post._id, newCaption);
-                  }
-                }}
-                style={{
-                  marginTop: "10px",
-                  marginRight: "10px",
-                  padding: "8px 15px",
-                  background: "#2563eb",
-                  color: "white",
-                  border: "none",
-                  cursor: "pointer",
-                  borderRadius: "5px",
-                  width: "120px",
-fontWeight: "bold",
-transition: "0.3s",
-                }}
-              >
-                ✏️ Edit
-              </button>
+                    if (newCaption) {
+                      updatePost(post._id, newCaption);
+                    }
+                  }}
+                  style={{
+                    background: "#16a34a",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    padding: "10px",
+                    width: isMobile ? "100%" : "120px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  ✏️ Edit
+                </button>
 
-              <button
-                onClick={() => deletePost(post._id)}
-                style={{
-                  marginTop: "10px",
-                  padding: "8px 15px",
-                  background: "red",
-                  color: "white",
-                  border: "none",
-                  cursor: "pointer",
-                  borderRadius: "5px",
-                  width: "120px",
-fontWeight: "bold",
-transition: "0.3s",
-                }}
-              >
-                🗑 Delete
-              </button>
+                <button
+                  onClick={() => deletePost(post._id)}
+                  style={{
+                    background: "#dc2626",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    padding: "10px",
+                    width: isMobile ? "100%" : "120px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  🗑 Delete
+                </button>
+              </div>
             </div>
           ))
       )}

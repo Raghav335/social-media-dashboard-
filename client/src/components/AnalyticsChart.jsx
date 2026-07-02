@@ -11,7 +11,12 @@ import {
   Legend,
 } from "recharts";
 
+import { useTheme } from "../context/ThemeContext";
+
 function AnalyticsChart({ totalPosts, totalLikes }) {
+  const { darkMode } = useTheme();
+  const isMobile = window.innerWidth < 768;
+
   const barData = [
     {
       name: "Posts",
@@ -36,17 +41,18 @@ function AnalyticsChart({ totalPosts, totalLikes }) {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(420px, 1fr))",
+        gridTemplateColumns: isMobile
+          ? "1fr"
+          : "repeat(auto-fit, minmax(420px, 1fr))",
         gap: "25px",
         marginTop: "35px",
         width: "100%",
       }}
     >
-      {/* Bar Chart */}
-
       <div
         style={{
-          background: "#fff",
+          background: darkMode ? "#1e293b" : "#ffffff",
+          color: darkMode ? "#ffffff" : "#1e293b",
           borderRadius: "15px",
           padding: "20px",
           boxShadow: "0 6px 15px rgba(0,0,0,0.1)",
@@ -64,8 +70,8 @@ function AnalyticsChart({ totalPosts, totalLikes }) {
 
         <ResponsiveContainer width="100%" height="90%">
           <BarChart data={barData}>
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis dataKey="name" stroke={darkMode ? "#fff" : "#000"} />
+            <YAxis stroke={darkMode ? "#fff" : "#000"} />
             <Tooltip />
 
             <Bar
@@ -77,11 +83,10 @@ function AnalyticsChart({ totalPosts, totalLikes }) {
         </ResponsiveContainer>
       </div>
 
-      {/* Pie Chart */}
-
       <div
         style={{
-          background: "#fff",
+          background: darkMode ? "#1e293b" : "#ffffff",
+          color: darkMode ? "#ffffff" : "#1e293b",
           borderRadius: "15px",
           padding: "20px",
           boxShadow: "0 6px 15px rgba(0,0,0,0.1)",
@@ -103,7 +108,7 @@ function AnalyticsChart({ totalPosts, totalLikes }) {
               data={pieData}
               dataKey="value"
               nameKey="name"
-              outerRadius={120}
+              outerRadius={isMobile ? 80 : 120}
               label
             >
               {pieData.map((entry, index) => (

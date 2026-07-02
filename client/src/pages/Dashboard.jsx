@@ -8,6 +8,8 @@ import Navbar from "../components/Navbar";
 
 
 function Dashboard() {
+  const isMobile = window.innerWidth < 768;
+const darkMode = localStorage.getItem("theme") === "dark";
 
   const [totalPosts, setTotalPosts] = useState(0);
 const [totalLikes, setTotalLikes] = useState(0);
@@ -33,14 +35,20 @@ const fetchDashboardData = async () => {
   }
 };
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
+    <div
+  style={{
+    display: "flex",
+    flexDirection: isMobile ? "column" : "row",
+    minHeight: "100vh",
+  }}
+>
       {/* Sidebar */}
       <div
         style={{
-          width: "250px",
+          width: isMobile ? "100%" : "250px",
           background: "#0f172a",
           color: "white",
-          padding: "30px 20px",
+          padding: isMobile ? "20px" : "30px 20px",
         }}
       >
         <h2
@@ -118,31 +126,35 @@ const fetchDashboardData = async () => {
       <div
         style={{
           flex: 1,
-          background: "#eef2ff",
-          padding: "40px",
+          background: darkMode ? "#0f172a" : "#eef2ff",
+padding: isMobile ? "20px" : "40px",
         }}
       >
         <Navbar />
 
         <div style={{ paddingTop: "60px" }}>
           <h1
-            style={{
-              margin: 0,
-              fontSize: "42px",
-fontWeight: "bold",
-color: "#1e293b",
-            }}
-          >
+  style={{
+    margin: 0,
+    fontSize: isMobile ? "30px" : "42px",
+    fontWeight: "bold",
+    color: darkMode ? "#fff" : "#1e293b",
+  }}
+>
             Welcome to Social Media Dashboard
           </h1>
 
           <p
-            style={{
-              marginTop: "20px",
-              fontSize: "18px",
-color: "#475569",
-            }}
-          >
+  style={{
+    marginTop: "20px",
+    fontSize: "18px",
+    color: darkMode ? "#cbd5e1" : "#475569",
+    maxWidth: "700px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    lineHeight: "1.6",
+  }}
+>
             Manage your posts, track engagement, and analyze your social media performance in one place.
           </p>
 
@@ -161,7 +173,7 @@ color: "#475569",
       color: "white",
       padding: "25px",
       borderRadius: "15px",
-      width: "230px",
+      width: isMobile ? "100%" : "230px",
       textAlign: "center",
       boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
 
@@ -190,7 +202,7 @@ cursor: "pointer",
       color: "white",
       padding: "25px",
       borderRadius: "15px",
-      width: "230px",
+      width: isMobile ? "100%" : "230px",
       textAlign: "center",
       boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
 
@@ -219,7 +231,7 @@ cursor: "pointer",
       color: "white",
       padding: "25px",
       borderRadius: "15px",
-      width: "230px",
+      width: isMobile ? "100%" : "230px",
       textAlign: "center",
       boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
       transition: "0.3s",
@@ -270,6 +282,7 @@ cursor: "pointer",
   <div
     style={{
       display: "flex",
+flexDirection: isMobile ? "column" : "row",
       gap: "15px",
       flexWrap: "wrap",
     }}
@@ -279,7 +292,7 @@ cursor: "pointer",
         style={{
           padding: "12px 20px",
 
-          width: "170px",
+          width: isMobile ? "100%" : "170px",
 height: "50px",
 fontWeight: "bold",
 fontSize: "15px",
@@ -299,7 +312,7 @@ fontSize: "15px",
         style={{
           padding: "12px 20px",
 
-          width: "170px",
+          width: isMobile ? "100%" : "170px",
 height: "50px",
 fontWeight: "bold",
 fontSize: "15px",
@@ -318,7 +331,7 @@ fontSize: "15px",
       <button
         style={{
           padding: "12px 20px",
-          width: "170px",
+          width: isMobile ? "100%" : "170px",
 height: "50px",
 fontWeight: "bold",
 fontSize: "15px",
@@ -337,7 +350,7 @@ fontSize: "15px",
       <button
         style={{
           padding: "12px 20px",
-          width: "170px",
+          width: isMobile ? "100%" : "170px",
 height: "50px",
 fontWeight: "bold",
 fontSize: "15px",
