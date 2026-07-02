@@ -204,7 +204,7 @@ npm start
 
 # 🌐 Live Demo
 
- # Frontend
+ ## Frontend
 
 https://social-media-dashboard-ukue-99e84upfi-raghav-gupta-jis-projects.vercel.app/
 
@@ -248,17 +248,20 @@ This project demonstrates practical understanding of:
 
 Bachelor of Computer Applications (BCA)
 
-MERN Stack Developer
+MERN& Full Stack Developer
 
-React.js Developer
 
-GitHub
+## GitHub
 
 https://github.com/Raghav335
 
+##linkdin 
+
+https://www.linkedin.com/in/raghav-gupta-8a9152328?utm_source=share_via&utm_content=profile&utm_medium=member_android
+
 ---
 
-# ⭐ Support
+## ⭐ Support
 
 If you found this project useful,
 
